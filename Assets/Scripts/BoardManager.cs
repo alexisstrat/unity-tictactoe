@@ -147,6 +147,7 @@ public class BoardManager : MonoBehaviour
             return;
         }
         
+        // Reward 1, and -1 for winner and loser respectively 
         if (_boardState == BoardState.X)
         {
             player1.SetReward(1f);
@@ -157,6 +158,7 @@ public class BoardManager : MonoBehaviour
             player1.SetReward(-1f);
             player2.SetReward(1f);
         } 
+        // Reward the 2nd player in case it is a draw and penalize the 1st player
         else if (_boardState == BoardState.Draw)
         {
             if (slotsO > slotsX)
@@ -189,7 +191,8 @@ public class BoardManager : MonoBehaviour
     ///    |3|4|5|
     ///    |6|7|8|
     ///    `-`-`-`
-    /// First we add the horizontal and vertical rows and check if we have
+    /// First we add the horizontal ((0,1,2),(3,4,5) etc)
+    /// and vertical ((0,3,6),(1,4,7) etc) rows and check if we have
     /// a winner. If not we add the diagonal rows and perform the same addition check.
     /// </summary>
     private void GetBoardState()

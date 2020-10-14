@@ -2,7 +2,6 @@
 
 public class Slot : MonoBehaviour
 {
-    
     public BoardManager boardManager;
     public SlotState currentState = SlotState.Free;
 

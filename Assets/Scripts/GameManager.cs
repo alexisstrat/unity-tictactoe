@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Takes the board state and shows a text depending
+    /// on it.
+    /// </summary>
     private void ShowWinner(BoardState boardState)
     {
         boardManager.canPlay = false;
